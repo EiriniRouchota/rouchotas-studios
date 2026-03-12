@@ -384,45 +384,51 @@ export default function HomePage() {
 
       {/* Experiences Section */}
       <section id="experiences" className="py-14 sm:py-20 lg:py-28 bg-sand">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-accent uppercase tracking-[0.3em] text-sm mb-3">
+        <div className="w-full mx-auto px-6 sm:px-10 lg:px-16">
+          <div className="flex flex-col items-center mb-16">
+            <p className="text-accent uppercase tracking-[0.3em] text-sm mb-3 text-center">
               Off the Beaten Track
             </p>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary-dark mb-4">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary-dark mb-4 text-center">
               Kefalonia Experiences
             </h2>
-            <div className="section-divider mb-6" />
-            <p className="text-body-light max-w-2xl mx-auto">
-              Discover the magic of Kefalonia with unforgettable experiences,
-              from hidden beaches and ancient caves to local wine tours and boat
-              excursions.
+            <div className="w-16 h-0.5 bg-accent mb-6" />
+            <p className="text-body-light max-w-2xl text-center">
+              From pristine beaches and wild nature to local cuisine and vibrant
+              nightlife -- discover everything Kefalonia has to offer, all
+              within easy reach from our studios.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                title: "Pristine Beaches",
-                desc: "Explore world-famous Myrtos Beach, the serene Antisamos, and hidden coves only accessible by boat.",
+                title: "Beaches & Sea",
+                desc: "Myrtos, Antisamos, Petani, Makris Yialos -- world-famous beaches with crystal-clear waters.",
                 image:
                   "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
               },
               {
-                title: "Local Cuisine & Wine",
-                desc: "Savor authentic Kefalonian dishes paired with the island's renowned Robola wine at traditional tavernas.",
+                title: "Local Cuisine",
+                desc: "Discover Argostoli's finest restaurants serving authentic Kefalonian dishes and Robola wine.",
                 image:
                   "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
               },
               {
-                title: "Island Adventures",
-                desc: "From boat trips around the island to hiking through lush forests and exploring Melissani Cave, adventure awaits.",
+                title: "Nature & Adventures",
+                desc: "Sea turtles, boat trips to Fteri beach, scuba diving, Mount Ainos hiking, and more.",
                 image:
                   "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80",
               },
+              {
+                title: "Nightlife & Events",
+                desc: "Beach parties, cocktail bars, and live music along the Argostoli waterfront all summer long.",
+                image:
+                  "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80",
+              },
             ].map((exp) => (
-              <div key={exp.title} className="group cursor-pointer">
-                <div className="relative h-72 overflow-hidden mb-6">
+              <div key={exp.title} className="group text-center">
+                <div className="relative h-64 overflow-hidden rounded-lg mb-5">
                   <Image
                     src={exp.image}
                     alt={exp.title}
@@ -431,14 +437,26 @@ export default function HomePage() {
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
                 </div>
-                <h3 className="font-heading text-xl text-primary-dark mb-3">
+                <h3 className="font-heading text-xl text-primary-dark mb-2">
                   {exp.title}
                 </h3>
-                <p className="text-body-light text-sm leading-relaxed">
+                <p className="text-body-light text-sm leading-relaxed px-2">
                   {exp.desc}
                 </p>
               </div>
             ))}
+          </div>
+
+          <div className="flex justify-center mt-14">
+            <Link
+              href="/experiences"
+              className="inline-flex items-center gap-3 px-12 py-5 bg-primary hover:bg-primary-light text-white uppercase tracking-widest text-sm font-semibold rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+            >
+              Explore All Experiences
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
