@@ -238,40 +238,145 @@ export default function HomePage() {
 
       {/* Location Section */}
       <section id="location" className="relative">
-        <div className="grid lg:grid-cols-2">
+        <div className="grid lg:grid-cols-[2fr_3fr]">
+          {/* Google Maps embed */}
           <div className="relative h-64 sm:h-80 lg:h-auto lg:min-h-[500px]">
-            <Image
-              src="https://images.unsplash.com/photo-1504512485720-7d83a16ee930?w=1200&q=80"
-              alt="Kefalonia coastline"
-              fill
-              className="object-cover"
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.5!2d20.4895!3d38.1747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135f7e3a3b3b3b3b%3A0x0!2sIoannou+Metaxa+54%2C+Argostoli+281+00%2C+Greece!5e0!3m2!1sen!2sgr!4v1"
+              className="absolute inset-0 w-full h-full border-0"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Rouchotas Studios location on Google Maps"
             />
           </div>
-          <div className="bg-primary-dark text-white py-12 sm:py-16 px-6 sm:px-8 lg:px-16 flex flex-col justify-center">
+
+          {/* Text content */}
+          <div className="bg-primary-dark text-white py-12 sm:py-16 px-6 sm:px-8 lg:px-12 flex flex-col justify-start overflow-hidden">
             <p className="text-accent uppercase tracking-[0.3em] text-sm mb-3">
               Location
             </p>
             <h2 className="font-heading text-3xl sm:text-4xl mb-6">
-              Kefalonia, Greece
+              Centre of Argostoli
             </h2>
-            <div className="w-16 h-0.5 bg-accent mb-8" />
-            <p className="text-sand-dark leading-relaxed mb-6">
-              Rouchotas Studios is ideally located in Kefalonia, the largest of
-              the Ionian Islands. Enjoy easy access to pristine beaches,
-              charming villages, and the island&apos;s most celebrated attractions.
+            <div className="w-16 h-0.5 bg-accent mb-6" />
+            <p className="text-sand-dark leading-relaxed mb-4">
+              Located right in the heart of Argostoli, at the port where the
+              ferry departs for Lixouri. Our central position makes Rouchotas
+              Studios the ideal base to explore everything Kefalonia has to offer
+              -- and that&apos;s what makes our apartments truly unique.
             </p>
-            <p className="text-sand-dark leading-relaxed mb-8">
-              Just minutes from stunning beaches and close to the island&apos;s
-              capital, Argostoli, our location offers the perfect blend of
-              convenience and serenity for your Greek island holiday.
+            <p className="text-sand-dark leading-relaxed mb-4">
+              The local bus takes you directly to the best beaches -- Makris
+              Yialos, Platis -- and of course to the airport. Everything you
+              need is just steps away.
             </p>
+            <br></br>
+            <div className="my-8" />
+
+            {/* Nearby amenities */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-4 mb-8">
+              <div className="flex items-center gap-3 text-sand-dark text-sm">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                  <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" /></svg>
+                </div>
+                Sea &amp; Port View
+              </div>
+              <div className="flex items-center gap-3 text-sand-dark text-sm">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                  <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" /></svg>
+                </div>
+                City Centre
+              </div>
+              <div className="flex items-center gap-3 text-sand-dark text-sm">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                  <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM7.15 4.76l-1.28.97L9.44 10H2v2h7.44l2.66 3.5 1.28-.97L9.81 10h6.75l1.44 1.5.69-.52L17.6 9.5l1.09-1.48-.69-.52L16.56 9H9.81l3.57-4.74-1.28-.97-2.1 2.8-2.85-2.33z" /></svg>
+                </div>
+                Supermarket
+              </div>
+              <div className="flex items-center gap-3 text-sand-dark text-sm">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                  <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M18.5 3H6c-1.1 0-2 .9-2 2v5.71c0 3.83 2.95 7.18 6.78 7.29 3.96.12 7.22-3.06 7.22-7v-1h.5c1.93 0 3.5-1.57 3.5-3.5S20.43 3 18.5 3zm0 5H18V5h.5C19.33 5 20 5.67 20 6.5S19.33 8 18.5 8zM2 21h18v2H2v-2z" /></svg>
+                </div>
+                Coffee Shops
+              </div>
+              <div className="flex items-center gap-3 text-sand-dark text-sm">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                  <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" /></svg>
+                </div>
+                Pharmacy
+              </div>
+              <div className="flex items-center gap-3 text-sand-dark text-sm">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                  <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z" /></svg>
+                </div>
+                Central Square (2 min)
+              </div>
+              <div className="flex items-center gap-3 text-sand-dark text-sm">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                  <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M13 9h-2V7h2v2zm0 2h-2v6h2v-6zm4-2V7h-2v2h2zm0 2h-2v6h2v-6zM9 9V7H7v2h2zm0 2H7v6h2v-6zm12-6v14c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2z" /></svg>
+                </div>
+                Hair Salon
+              </div>
+              <div className="flex items-center gap-3 text-sand-dark text-sm">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                  <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" /></svg>
+                </div>
+                Free Parking
+              </div>
+            </div>
+          <br />
+            {/* Transport links */}
+            <h3 className="text-white uppercase tracking-widest text-xs font-semibold mb-4">
+              Transport
+            </h3>
+            <div className="space-y-3 mb-8">
+              <a
+                href="https://ktelkefalonias.gr/en/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 px-4 py-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors group"
+              >
+                <div className="w-10 h-10 rounded-full bg-amber-400 flex items-center justify-center shrink-0">
+                  <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z" /></svg>
+                </div>
+                <div>
+                  <p className="text-white font-semibold text-sm">KTEL Bus Station</p>
+                  <p className="text-sand-dark text-xs">To Makris Yialos, Platis &amp; Airport</p>
+                </div>
+                <svg className="w-4 h-4 text-white/50 ml-auto shrink-0 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+              <a
+                href="https://www.ionianseaferries.gr/en/lixouri-argostoli-pessada-zakinthos.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 px-4 py-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors group"
+              >
+                <div className="w-10 h-10 rounded-full bg-sky-500 flex items-center justify-center shrink-0">
+                  <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M20 21c-1.39 0-2.78-.47-4-1.32-2.44 1.71-5.56 1.71-8 0C6.78 20.53 5.39 21 4 21H2v2h2c1.38 0 2.74-.35 4-.99 2.52 1.29 5.48 1.29 8 0 1.26.65 2.62.99 4 .99h2v-2h-2zM3.95 19H4c1.6 0 3.02-.88 4-2 .98 1.12 2.4 2 4 2s3.02-.88 4-2c.98 1.12 2.4 2 4 2h.05l1.89-6.68c.08-.26.06-.54-.06-.78s-.34-.42-.6-.5L20 10.62V6c0-1.1-.9-2-2-2h-3V1H9v3H6c-1.1 0-2 .9-2 2v4.62l-1.29.42c-.26.08-.48.26-.6.5s-.14.52-.05.78L3.95 19zM6 6h12v3.97L12 8 6 9.97V6z" /></svg>
+                </div>
+                <div>
+                  <p className="text-white font-semibold text-sm">Ferry to Lixouri</p>
+                  <p className="text-sand-dark text-xs">Ionian Sea Ferries</p>
+                </div>
+                <svg className="w-4 h-4 text-white/50 ml-auto shrink-0 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+            </div>
+
             <a
-              href="https://maps.google.com/?q=Kefalonia+Greece"
+              href="https://maps.google.com/?q=Ioannou+Metaxa+54+Argostoli+Kefalonia+Greece"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 border-2 border-accent text-accent uppercase tracking-widest text-sm hover:bg-accent hover:text-white transition-colors self-start"
+              className="inline-flex items-center gap-3 px-6 py-3 bg-white text-primary-dark uppercase tracking-widest text-sm font-semibold hover:shadow-lg hover:scale-105 transition-all self-center rounded-lg"
             >
-              Find Us on Map
+              <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 8 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8z" fill="#EA4335" />
+                <circle cx="12" cy="10" r="3" fill="white" />
+                <path d="M12 2C7.58 2 4 5.58 4 10h8V2z" fill="#4285F4" opacity="0.3" />
+                <path d="M12 2v8h8c0-4.42-3.58-8-8-8z" fill="#FBBC04" opacity="0.3" />
+                <path d="M4 10c0 5.25 8 12 8 12V10H4z" fill="#34A853" opacity="0.3" />
+              </svg>
+              Find Us on Google Maps
             </a>
           </div>
         </div>

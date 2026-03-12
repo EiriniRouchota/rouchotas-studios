@@ -266,7 +266,7 @@ export default function AccommodationPage() {
                       </div>
                     ))}
                   </div>
-
+                 <div><br></br></div>
                   <button
                     onClick={() => setBookingRoom(room.name)}
                     className="px-8 py-3 bg-primary hover:bg-primary-light text-white uppercase tracking-widest text-sm transition-colors cursor-pointer"
