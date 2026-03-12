@@ -1,0 +1,9 @@
+Mobile Responsive Fixes - TODO
+================================
+
+1. Accommodation page: amenity text cramped on small screens - add more spacing
+2. Homepage location section: text content needs more padding on mobile
+3. Homepage hero carousel: verify touch swipe works smoothly on all devices
+4. Test hamburger menu on various mobile sizes
+5. Verify lightbox gallery works well on mobile (touch gestures, close button)
+6. Check booking modal sizing on small screens
