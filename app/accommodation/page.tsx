@@ -53,6 +53,15 @@ const AMENITY_ICONS: Record<string, React.ReactNode> = {
   "Spacious": (
     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 8V4h4M20 8V4h-4M4 16v4h4m12-4v4h-4" /></svg>
   ),
+  "Up to 4 Guests": (
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11a3 3 0 100-6 3 3 0 000 6zM8 13a3 3 0 100-6 3 3 0 000 6z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 20a5 5 0 015-5h2a5 5 0 015 5M13 20a5 5 0 015-5h1a5 5 0 015 5" /></svg>
+  ),
+  "Double King-Size Bed": (
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 11h18v8H3zM3 11V8a2 2 0 012-2h6a2 2 0 012 2v3M13 11V8a2 2 0 012-2h4a2 2 0 012 2v3M5 19v2m14-2v2" /></svg>
+  ),
+  "Two Separate Beds": (
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12h8v7H3zM13 12h8v7h-8zM3 12V9a2 2 0 012-2h4a2 2 0 012 2v3M13 12V9a2 2 0 012-2h4a2 2 0 012 2v3M5 19v2m14-2v2" /></svg>
+  ),
   "Renovated 2026": (
     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
   ),
@@ -60,89 +69,94 @@ const AMENITY_ICONS: Record<string, React.ReactNode> = {
 
 const ROOMS = [
   {
-    name: "Studio 1 – The Grand",
+    name: "Studio 5 – Sunset Suite",
     description:
-      "Our most spacious studio, perfect for those who value extra room to relax. Features a generous living space with a fully equipped kitchen, modern air conditioning, and a private balcony. A true home away from home in the heart of Argostoli.",
+      "Newly renovated in 2026 with a fresh, modern design. This studio captures the golden Kefalonian sunsets over the port of Argostoli. Complete with a full kitchen, premium bedding, and a spacious balcony for evening relaxation. Features a double king-size bed.",
     images: [
-      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=80",
-      "https://images.unsplash.com/photo-1586105251261-72a756497a11?w=1200&q=80",
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80",
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&q=80",
+      "/images/5/846165649.jpg",
+      "/images/5/846165500.jpg",
+      "/images/5/846165384.jpg",
+      "/images/5/846165780.jpg",
+      "/images/5/846165847.jpg",
+      "/images/5/846165892.jpg",
+      "/images/5/846165988.jpg",
+      "/images/5/846208714.jpg",
+      "/images/5/846208815.jpg",
+      "/images/5/846208920.jpg",
+      "/images/5/846208960.jpg",
     ],
-    amenities: ["Spacious", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
+    renovationSticker: "Renovated April 2026",
+    amenities: ["Renovated 2026", "Double King-Size Bed", "Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
   },
   {
-    name: "Studio 2 – Garden Retreat",
+    name: "Studio 6 – Ionian Blue",
     description:
-      "A peaceful studio overlooking the lush garden, fully equipped with everything you need for a comfortable stay. Wake up to the sound of birdsong and enjoy your morning coffee surrounded by Mediterranean greenery.",
+      "Freshly renovated in 2026 and inspired by the blues of the Ionian Sea. This studio features stunning port views, contemporary interiors, and everything you need for a comfortable and stylish stay. Includes two separate beds.",
     images: [
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200&q=80",
-      "https://images.unsplash.com/photo-1598928636135-d146006ff4be?w=1200&q=80",
-      "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=1200&q=80",
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80",
+      "/images/6/784467690.jpg",
+      "/images/6/843453787.jpg",
+      "/images/6/843453868.jpg",
+      "/images/6/843453920.jpg",
+      "/images/6/843455834.jpg",
+      "/images/6/843455911.jpg",
     ],
-    amenities: ["Garden View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
+    renovationSticker: "Renovated April 2026",
+    amenities: ["Renovated 2026", "Two Separate Beds", "Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
   },
   {
     name: "Studio 3 – Port Panorama",
     description:
       "Freshly renovated in 2026, this studio offers breathtaking views of the port of Argostoli. Completely redesigned with modern furnishings, a fully equipped kitchen, and a private balcony where you can watch the boats come and go.",
-    images: [
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&q=80",
-      "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1200&q=80",
-      "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&q=80",
-      "https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=1200&q=80",
-    ],
+    images: [],
+    photoNotice: "Currently under renovation. Upcoming photos soon.",
     amenities: ["Renovated 2026", "Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
   },
   {
     name: "Studio 4 – Harbour View",
     description:
       "Enjoy uninterrupted views of the harbour from this cozy and well-appointed studio. Fully equipped with a complete kitchen, air conditioning, and all the comforts you need for an unforgettable stay in Kefalonia.",
-    images: [
-      "https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=1200&q=80",
-      "https://images.unsplash.com/photo-1564078516393-cf04bd966897?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=1200&q=80",
-    ],
-    amenities: ["Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
-  },
-  {
-    name: "Studio 5 – Sunset Suite",
-    description:
-      "Newly renovated in 2026 with a fresh, modern design. This studio captures the golden Kefalonian sunsets over the port of Argostoli. Complete with a full kitchen, premium bedding, and a spacious balcony for evening relaxation.",
-    images: [
-      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200&q=80",
-      "https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80",
-    ],
-    amenities: ["Renovated 2026", "Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
-  },
-  {
-    name: "Studio 6 – Ionian Blue",
-    description:
-      "Freshly renovated in 2026 and inspired by the blues of the Ionian Sea. This studio features stunning port views, contemporary interiors, and everything you need for a comfortable and stylish stay.",
-    images: [
-      "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=1200&q=80",
-      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=1200&q=80",
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80",
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&q=80",
-    ],
-    amenities: ["Renovated 2026", "Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
+    images: [],
+    photoNotice: "Currently under renovation. Upcoming photos soon.",
+    amenities: ["Double King-Size Bed", "Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
   },
   {
     name: "Studio 7 – Captains Quarters",
     description:
-      "Overlooking the bustling port of Argostoli, this studio is the perfect vantage point for watching island life unfold. Fully equipped kitchen, air conditioning, and a private balcony make this your ideal Kefalonian base.",
+      "Overlooking the bustling port of Argostoli, this studio is the perfect vantage point for watching island life unfold. Fully equipped kitchen, air conditioning, and a private balcony make this your ideal Kefalonian base. Features a double king-size bed.",
     images: [
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200&q=80",
-      "https://images.unsplash.com/photo-1586105251261-72a756497a11?w=1200&q=80",
-      "https://images.unsplash.com/photo-1564078516393-cf04bd966897?w=1200&q=80",
-      "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&q=80",
+      "/images/7/717028738.jpg",
+      "/images/7/717029006.jpg",
+      "/images/7/741394917.jpg",
     ],
     amenities: ["Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
   },
+  {
+    name: "Studio 1 – The Grand",
+    description:
+      "Our most spacious studio, perfect for those who value extra room to relax. Features a generous living space with a fully equipped kitchen, modern air conditioning, and a private balcony. A true home away from home in the heart of Argostoli. Accommodates up to 4 guests.",
+    images: [
+      "/images/1/663423818.jpg",
+      "/images/1/663423850.jpg",
+      "/images/general/garden.jpg",
+    ],
+    amenities: ["Spacious", "Up to 4 Guests", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
+  },
+  {
+    name: "Studio 2 – Garden Retreat",
+    description:
+      "A peaceful studio overlooking the lush garden, fully equipped with everything you need for a comfortable stay. Wake up to the sound of birdsong and enjoy your morning coffee surrounded by Mediterranean greenery.",
+    images: [
+      "/images/2/723875003.jpg",
+      "/images/general/garden.jpg",
+    ],
+    amenities: ["Garden View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
+  },
+];
+
+const LOBBY_IMAGES = [
+  "/images/general/lobby_entry.jpg",
+  "/images/general/lobby.jpg",
+  "/images/general/lobby2.jpg",
 ];
 
 export default function AccommodationPage() {
@@ -169,7 +183,7 @@ export default function AccommodationPage() {
       {/* Hero Banner */}
       <section className="relative h-[40vh] min-h-[300px]">
         <Image
-          src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1920&q=80"
+          src="/images/6/843455834.jpg"
           alt="Rouchotas Studios - Accommodation"
           fill
           className="object-cover"
@@ -188,94 +202,199 @@ export default function AccommodationPage() {
 
       {/* Intro */}
       <section className="py-14 sm:py-20 bg-sand">
-        <div className="w-full flex justify-center px-4 sm:px-6 lg:px-8">
-          <p className="text-body-light leading-relaxed text-sm sm:text-base text-center max-w-3xl">
-            All seven studios are fully equipped with everything you need for a
-            comfortable stay -- just like home. Each features a private balcony,
-            air conditioning, a complete kitchen with cookware, free Wi-Fi, and
-            more. Located in the heart of Argostoli with views of the port or garden.
-          </p>
+        
+        <br></br>
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div className="w-full rounded-2xl border border-primary/20 bg-white/60 backdrop-blur-sm px-6 py-7 sm:px-10 sm:py-9 text-center shadow-[0_10px_30px_rgba(38,56,74,0.08)]">
+            <p className="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-primary font-semibold mb-3">
+              Your Stay At A Glance
+            </p>
+            <h2 className="font-heading text-primary-dark text-2xl sm:text-3xl mb-4">
+              All Seven Studios, Fully Equipped
+            </h2>
+            <p className="text-primary-dark/90 leading-relaxed text-base sm:text-lg">
+              All seven studios are fully equipped with everything you need for a
+              comfortable stay, just like home. Every studio includes a private
+              balcony, air conditioning, a complete kitchen with cookware, free Wi-Fi,
+              and more, all in the heart of Argostoli with port or garden views.
+            </p>
+          </div>
+          <br></br>
         </div>
       </section>
 
       {/* Rooms */}
       <section className="py-14 sm:py-20 bg-sand-dark">
         <div className="w-full px-4 sm:px-6 lg:px-8">
-          <div className="space-y-20 sm:space-y-28">
+          <div className="space-y-32 sm:space-y-40">
             {ROOMS.map((room, index) => (
+              // Use explicit sticker text when provided (e.g. Renovated April 2026).
+              // Fall back to amenity-based badge for existing renovated rooms.
               <div
                 key={room.name}
-                className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+                className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch"
               >
                 <div className={`flex flex-col gap-2 ${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                  <div
-                    className="relative h-72 sm:h-96 lg:h-[400px] overflow-hidden rounded-lg shadow-lg cursor-pointer group"
-                    onClick={() => setLightbox({ images: room.images, index: 0 })}
-                  >
-                    <Image
-                      src={room.images[0]}
-                      alt={room.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    {room.amenities.includes("Renovated 2026") && (
-                      <div className="absolute top-4 left-4 bg-accent text-white text-xs uppercase tracking-wider font-bold px-3 py-1.5 rounded-full shadow-md">
-                        Renovated 2026
-                      </div>
-                    )}
-                    <div className="absolute bottom-4 right-4 bg-black/50 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-sm">
-                      Click to view all photos
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-3 gap-2">
-                    {room.images.slice(1).map((img, imgIndex) => (
+                  {room.images.length > 0 ? (
+                    <>
                       <div
-                        key={imgIndex}
-                        className="relative h-20 sm:h-24 overflow-hidden rounded cursor-pointer group"
-                        onClick={() => setLightbox({ images: room.images, index: imgIndex + 1 })}
+                        className="relative h-72 sm:h-96 lg:h-[400px] overflow-hidden rounded-lg shadow-lg cursor-pointer group"
+                        onClick={() => setLightbox({ images: room.images, index: 0 })}
                       >
                         <Image
-                          src={img}
-                          alt={`${room.name} - Photo ${imgIndex + 2}`}
+                          src={room.images[0]}
+                          alt={room.name}
                           fill
-                          className="object-cover group-hover:scale-110 transition-transform duration-300"
+                          className="object-contain bg-sand-dark transition-transform duration-500 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
+                        {(room.renovationSticker || room.amenities.includes("Renovated 2026")) && (
+                          <div className="absolute top-4 left-4 z-10 bg-[#d4af37] text-[#2d2212] rounded-md px-3 py-2 border border-[#b58f22] shadow-[0_10px_24px_rgba(58,42,15,0.28)]">
+                            <p className="text-[10px] uppercase tracking-[0.18em] font-semibold text-[#5b460f]">
+                                Recently Updated
+                            </p>
+                            <p className="text-xs sm:text-sm font-extrabold uppercase tracking-[0.08em] leading-tight">
+                              {room.renovationSticker || "Renovated 2026"}
+                            </p>
+                          </div>
+                        )}
+                        <div className="absolute bottom-4 right-4 bg-black/50 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-sm">
+                          Click to view all photos
+                        </div>
                       </div>
-                    ))}
-                  </div>
+                      <div className="grid grid-cols-3 gap-2">
+                        {room.images.slice(1).map((img, imgIndex) => (
+                          <div
+                            key={imgIndex}
+                            className="relative h-20 sm:h-24 overflow-hidden rounded cursor-pointer group"
+                            onClick={() => setLightbox({ images: room.images, index: imgIndex + 1 })}
+                          >
+                            <Image
+                              src={img}
+                              alt={`${room.name} - Photo ${imgIndex + 2}`}
+                              fill
+                              className="object-contain bg-sand-dark group-hover:scale-105 transition-transform duration-300"
+                            />
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  ) : (
+                    <div className="h-72 sm:h-96 lg:h-[400px] rounded-lg shadow-lg bg-primary-dark/90 text-white flex items-center justify-center text-center px-6">
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.24em] text-white/80 mb-3">
+                          Photo Update
+                        </p>
+                        <p className="font-heading text-xl sm:text-2xl mb-2">
+                          Currently Under Renovation
+                        </p>
+                        <p className="text-sm sm:text-base text-white/90">
+                          Upcoming photos soon.
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                  <br></br>
                 </div>
-                <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                  <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl text-primary-dark mb-4">
-                    {room.name}
-                  </h2>
-                  <p className="text-body-light leading-relaxed text-sm sm:text-base mb-8">
-                    {room.description}
-                  </p>
+                <div className={`${index % 2 === 1 ? "lg:order-1" : ""} h-full flex flex-col justify-center`}>
+                  <div className="space-y-6">
+                    <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl text-primary-dark">
+                      {room.name}
+                    </h2>
+                    {room.photoNotice && (
+                      <p className="inline-block px-3 py-1.5 bg-accent/15 text-accent text-xs sm:text-sm font-semibold uppercase tracking-wider rounded-full">
+                        {room.photoNotice}
+                      </p>
+                    )}
+                    <br></br>
+                    <p className="text-body-light leading-relaxed text-sm sm:text-base">
+                      {room.description}
+                    </p>
 
-                  <h3 className="text-primary-dark font-semibold text-sm uppercase tracking-widest mb-4">
-                    Amenities
-                  </h3>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
-                    {room.amenities.filter(a => a !== "Renovated 2026").map((amenity) => (
-                      <div key={amenity} className="flex items-center gap-2 text-body-light text-sm">
-                        <span className="text-primary shrink-0">
-                          {AMENITY_ICONS[amenity]}
-                        </span>
-                        {amenity}
-                      </div>
-                    ))}
+                    
+                    <br></br><h3 className="text-primary-dark font-semibold text-sm uppercase tracking-widest">
+                      Amenities
+                    </h3> <br></br>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                      {room.amenities.filter(a => a !== "Renovated 2026").map((amenity) => (
+                        <div key={amenity} className="flex items-center gap-2 text-body-light text-sm">
+                          <span className="text-primary shrink-0">
+                            {AMENITY_ICONS[amenity]}
+                          </span>
+                          {amenity}
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                 <div><br></br></div>
+                  <br></br>
                   <button
                     onClick={() => setBookingRoom(room.name)}
-                    className="px-8 py-3 bg-primary hover:bg-primary-light text-white uppercase tracking-widest text-sm transition-colors cursor-pointer"
+                    className="mt-8 px-8 py-3 bg-primary hover:bg-primary-light text-white uppercase tracking-widest text-sm transition-colors cursor-pointer"
                   >
                     Book Now
                   </button>
+                  <br></br>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Lobby Area */}
+      <section className="py-14 sm:py-20 bg-sand">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div>
+              <p className="text-accent uppercase tracking-[0.22em] text-xs sm:text-sm mb-3">
+                Shared Lobby Area
+              </p>
+              <h2 className="font-heading text-3xl sm:text-4xl text-primary-dark mb-5">
+                Start Your Day In The Lobby
+              </h2>
+              <p className="text-body-light leading-relaxed text-sm sm:text-base">
+                Our welcoming lobby area is available to all guests and is the
+                perfect place to begin your morning. You can find fresh water
+                and juice here to start your day before heading out to explore
+                Argostoli and the island.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              <div
+                className="relative col-span-2 h-56 sm:h-72 rounded-lg overflow-hidden shadow-lg cursor-pointer group"
+                onClick={() => setLightbox({ images: LOBBY_IMAGES, index: 0 })}
+              >
+                <Image
+                  src="/images/general/lobby_entry.jpg"
+                  alt="Lobby entrance and garden area"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div
+                className="relative h-36 sm:h-44 rounded-lg overflow-hidden shadow-md cursor-pointer group"
+                onClick={() => setLightbox({ images: LOBBY_IMAGES, index: 1 })}
+              >
+                <Image
+                  src="/images/general/lobby.jpg"
+                  alt="Lobby area at Rouchotas Studios"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div
+                className="relative h-36 sm:h-44 rounded-lg overflow-hidden shadow-md cursor-pointer group"
+                onClick={() => setLightbox({ images: LOBBY_IMAGES, index: 2 })}
+              >
+                <Image
+                  src="/images/general/lobby2.jpg"
+                  alt="Lobby sitting area"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

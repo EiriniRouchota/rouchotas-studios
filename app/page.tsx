@@ -7,13 +7,15 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 const HERO_SLIDES = [
+    "/images/6/843455834.jpg",
+  "/images/5/846165892.jpg",
   "/rouchotas-studios-by-viktor-1rst-floor-argostoli-kefalonia-img-6.jpg",
   "/balcony-hero.jpg",
-  "/port-argostoli.jpg",
-  "/licensed-image.jpg",
-  "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1920&q=80",
-  "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1920&q=80",
-  "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1920&q=80",
+
+  "/images/5/846165847.jpg",
+  "/images/5/846208920.jpg",
+  "/images/hero/262205978.jpg"
+ 
 ];
 
 export default function HomePage() {
@@ -47,7 +49,11 @@ export default function HomePage() {
         onTouchEnd={() => {
           const diff = touchStartX.current - touchEndX.current;
           if (Math.abs(diff) > 50) {
-            diff > 0 ? nextSlide() : prevSlide();
+            if (diff > 0) {
+              nextSlide();
+            } else {
+              prevSlide();
+            }
           }
         }}
       >
@@ -175,8 +181,8 @@ export default function HomePage() {
               <div className="relative h-48 sm:h-64 lg:h-80">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/port-argostoli.jpg"
-                  alt="Port of Argostoli view"
+                  src="/images/general/kefalonia-argostoli.gif"
+                  alt="Argostoli Kefalonia view"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
@@ -192,7 +198,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
+        <br></br>
       {/* Accommodation Section */}
       <section id="accommodation" className="py-14 sm:py-20 lg:py-28 bg-sand-dark">
         <div className="w-full px-4 sm:px-6 lg:px-8">
@@ -200,20 +206,27 @@ export default function HomePage() {
             <p className="text-accent uppercase tracking-[0.3em] text-sm mb-3">
               Accommodation Rennovated in 2026
             </p>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary-dark">
-              Apartments &amp; Studios 
-            </h2>
+            <Link
+              href="/accommodation"
+              className="group inline-block"
+              aria-label="Go to Apartments and Studios page"
+            >
+              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary-dark transition-colors group-hover:text-primary">
+                Apartments &amp; Studios
+              </h2>
+            </Link>
             <div className="mt-6 section-divider" />
           </div>
           <br></br>
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch mt-10 sm:mt-14">
             <div className="relative h-72 sm:h-96 lg:h-auto lg:min-h-[450px] overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=80"
+                src="/images/5/846208714.jpg"
                 alt="Renovated studio room"
                 fill
                 className="object-cover"
               />
+    
             </div>
             <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-8 lg:py-12">
               <p className="text-body-light leading-relaxed text-sm sm:text-base mb-6">
@@ -235,7 +248,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
+    <br></br>
       {/* Location Section */}
       <section id="location" className="relative">
         <div className="grid lg:grid-cols-[2fr_3fr]">
@@ -381,7 +394,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
+     <br></br>
       {/* Experiences Section */}
       <section id="experiences" className="py-14 sm:py-20 lg:py-28 bg-sand">
         <div className="w-full mx-auto px-6 sm:px-10 lg:px-16">
@@ -389,9 +402,15 @@ export default function HomePage() {
             <p className="text-accent uppercase tracking-[0.3em] text-sm mb-3 text-center">
               Off the Beaten Track
             </p>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary-dark mb-4 text-center">
-              Kefalonia Experiences
-            </h2>
+            <Link
+              href="/experiences"
+              className="group inline-block"
+              aria-label="Go to Kefalonia Experiences page"
+            >
+              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary-dark mb-4 text-center transition-colors group-hover:text-primary">
+                Kefalonia Experiences
+              </h2>
+            </Link>
             <div className="w-16 h-0.5 bg-accent mb-6" />
             <p className="text-body-light max-w-2xl text-center">
               From pristine beaches and wild nature to local cuisine and vibrant
@@ -405,26 +424,22 @@ export default function HomePage() {
               {
                 title: "Beaches & Sea",
                 desc: "Myrtos, Antisamos, Petani, Makris Yialos -- world-famous beaches with crystal-clear waters.",
-                image:
-                  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
+                image: "/images/general/platis.jpg",
               },
               {
                 title: "Local Cuisine",
                 desc: "Discover Argostoli's finest restaurants serving authentic Kefalonian dishes and Robola wine.",
-                image:
-                  "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+                image: "/images/general/kitchen.jpeg",
               },
               {
                 title: "Nature & Adventures",
                 desc: "Sea turtles, boat trips to Fteri beach, scuba diving, Mount Ainos hiking, and more.",
-                image:
-                  "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80",
+                image: "/images/general/nature.jpg",
               },
               {
                 title: "Nightlife & Events",
                 desc: "Beach parties, cocktail bars, and live music along the Argostoli waterfront all summer long.",
-                image:
-                  "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80",
+                image: "/images/general/night.jpg",
               },
             ].map((exp) => (
               <div key={exp.title} className="group text-center">
@@ -447,43 +462,6 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="flex justify-center mt-14">
-            <Link
-              href="/experiences"
-              className="inline-flex items-center gap-3 px-12 py-5 bg-primary hover:bg-primary-light text-white uppercase tracking-widest text-sm font-semibold rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all"
-            >
-              Explore All Experiences
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="relative py-16 sm:py-24">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/licensed-image.jpg"
-          alt="Kefalonia sunset over the Ionian Sea"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-primary-dark/75" />
-        <div className="relative text-center text-white px-6 sm:px-4">
-          <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl mb-4 sm:mb-6">
-            Your Summer in Kefalonia Starts Here
-          </h2>
-          <p className="text-sand-dark max-w-xl mx-auto mb-8 sm:mb-10 text-base sm:text-lg">
-            Book your stay at Rouchotas Studios and wake up to sea views,
-            warm breezes, and the laid-back charm of island life.
-          </p>
-          <a
-            href="#contact"
-            className="px-10 py-4 bg-primary hover:bg-primary-light text-white uppercase tracking-widest text-sm transition-colors"
-          >
-            Get in Touch
-          </a>
         </div>
       </section>
 
