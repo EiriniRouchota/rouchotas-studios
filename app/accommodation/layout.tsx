@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { siteName } from "../site-config";
 
 export const metadata: Metadata = {
   title: "Accommodation - Studios in Argostoli, Kefalonia",
@@ -12,11 +13,23 @@ export const metadata: Metadata = {
     "self catering argostoli",
     "holidays 2026 greece",
     "studios with sea view kefalonia",
+    "accomodation kefalonia",
   ],
+  alternates: {
+    canonical: "/accommodation",
+  },
   openGraph: {
-    title: "Accommodation | Rouchotas Studios - Argostoli, Kefalonia",
+    title: `Accommodation | ${siteName} - Argostoli, Kefalonia`,
     description:
       "7 fully equipped apartment studios in central Argostoli with sea views, balconies, and free parking. Book for holidays 2026.",
+    url: "/accommodation",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Accommodation | ${siteName}`,
+    description:
+      "7 fully equipped studios in Argostoli with kitchen, balcony, Wi-Fi, and sea or garden views.",
   },
 };
 

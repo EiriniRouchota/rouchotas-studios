@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { siteName } from "../site-config";
 
 export const metadata: Metadata = {
   title: "Kefalonia Experiences - Beaches, Nature, Cuisine & Nightlife",
@@ -15,10 +16,21 @@ export const metadata: Metadata = {
     "holidays 2026 greece",
     "kefalonia scuba diving",
   ],
+  alternates: {
+    canonical: "/experiences",
+  },
   openGraph: {
-    title: "Kefalonia Experiences | Rouchotas Studios",
+    title: `Kefalonia Experiences | ${siteName}`,
     description:
       "Beaches, nature, cuisine, boat trips, diving and nightlife -- everything Kefalonia has to offer, all within reach from Rouchotas Studios.",
+    url: "/experiences",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Kefalonia Experiences | ${siteName}`,
+    description:
+      "Best things to do in Kefalonia: beaches, food, nature, cruises and nightlife around Argostoli.",
   },
 };
 

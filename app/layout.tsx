@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { siteName, siteUrl } from "./site-config";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Rouchotas Studios | Argostoli, Kefalonia - Holidays 2026",
-    template: "%s | Rouchotas Studios Kefalonia",
+    default: "Rouchotas Studios by Viktor | Argostoli, Kefalonia Accommodation 2026",
+    template: "%s | Rouchotas Studios by Viktor",
   },
   description:
-    "Rouchotas Studios - Fully equipped apartment studios in the centre of Argostoli, Kefalonia. Ideal accommodation for holidays 2026 in Greece. Sea views, free parking, and walking distance to beaches, restaurants & port.",
+    "Rouchotas Studios by Viktor - Fully equipped apartment studios in the centre of Argostoli, Kefalonia. Ideal accommodation for holidays 2026 in Greece. Sea views, free parking, and walking distance to beaches, restaurants & port.",
   keywords: [
     "holidays 2026",
     "greece",
@@ -20,22 +22,23 @@ export const metadata: Metadata = {
     "kefalonia greece holidays",
     "ionian islands accommodation",
     "rouchotas studios",
+    "rouchotas studios by viktor",
     "self catering kefalonia",
     "studios argostoli kefalonia",
   ],
-  authors: [{ name: "Rouchotas Studios" }],
+  authors: [{ name: siteName }],
   openGraph: {
-    title: "Rouchotas Studios | Argostoli, Kefalonia - Holidays 2026",
+    title: "Rouchotas Studios by Viktor | Argostoli, Kefalonia Accommodation 2026",
     description:
       "Fully equipped apartment studios in the centre of Argostoli, Kefalonia. Sea views, free parking, and walking distance to everything. Book your Greek island holiday 2026.",
-    url: "https://rouchotas-studios.vercel.app",
-    siteName: "Rouchotas Studios",
+    url: siteUrl,
+    siteName,
     locale: "en_GB",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rouchotas Studios | Kefalonia, Greece",
+    title: "Rouchotas Studios by Viktor | Kefalonia, Greece",
     description:
       "Apartment studios in the heart of Argostoli, Kefalonia. Perfect for holidays 2026 in Greece.",
   },
@@ -51,7 +54,10 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://rouchotas-studios.vercel.app",
+    canonical: "/",
+  },
+  verification: {
+    google: "kDtgSpzmgDHINIgkYUxmUwk0izdzlD_IdbRH3bJ3KDc",
   },
 };
 
@@ -73,10 +79,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LodgingBusiness",
-              name: "Rouchotas Studios",
+              name: siteName,
               description:
                 "Fully equipped apartment studios in the centre of Argostoli, Kefalonia, Greece. Family-run since the late 1990s, renovated 2026.",
-              url: "https://rouchotas-studios.vercel.app",
+              url: siteUrl,
               telephone: "+306931833057",
               email: "xarafragkia@gmail.com",
               address: {
@@ -99,7 +105,7 @@ export default function RootLayout({
                 ratingCount: "150",
                 itemReviewed: {
                   "@type": "LodgingBusiness",
-                  name: "Rouchotas Studios",
+                  name: "Rouchotas Studios by Viktor",
                 },
               },
               amenityFeature: [

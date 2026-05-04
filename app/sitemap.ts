@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
+import { siteUrl } from "./site-config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://rouchotas-studios.vercel.app";
+  const baseUrl = siteUrl;
 
   return [
     {
