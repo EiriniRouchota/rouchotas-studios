@@ -2,6 +2,12 @@
 
 import { useEffect } from "react";
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 interface BookingModalProps {
   roomName: string;
   onClose: () => void;
@@ -14,6 +20,14 @@ export default function BookingModal({ roomName, onClose }: BookingModalProps) {
     };
     window.addEventListener("keydown", handleKey);
     document.body.style.overflow = "hidden";
+
+    // Google Ads conversion event for contact
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "conversion", {
+        send_to: "AW-18143343998/QU5dCNORvagcEP7qtctD",
+      });
+    }
+
     return () => {
       window.removeEventListener("keydown", handleKey);
       document.body.style.overflow = "";
