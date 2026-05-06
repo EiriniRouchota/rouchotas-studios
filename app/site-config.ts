@@ -1,4 +1,4 @@
-const DEFAULT_SITE_URL = "https://rouchotas-studios.vercel.app";
+const DEFAULT_SITE_URL = "https://rouchotas-studios.com";
 
 function normalizeSiteUrl(rawUrl?: string): string {
   const candidate = rawUrl?.trim();
