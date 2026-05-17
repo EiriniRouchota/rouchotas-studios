@@ -115,8 +115,14 @@ const ROOMS = [
     name: "Studio 4 – Harbour View",
     description:
       "Enjoy uninterrupted views of the harbour from this cozy and well-appointed studio. Fully equipped with a complete kitchen, air conditioning, and all the comforts you need for an unforgettable stay in Kefalonia.",
-    images: [],
-    photoNotice: "Currently under renovation. Upcoming photos soon.",
+    images: [
+      '/images/4/room4.jpg',
+      '/images/4/room41.jpg',
+      '/images/4/room42.jpg',
+      '/images/4/room43.jpg',
+      '/images/4/room44.jpg'
+    ],
+    photoNotice: "Renovated April 2026",
     amenities: ["Double King-Size Bed", "Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
   },
   {
