@@ -188,7 +188,6 @@ const ROOMS = [
 
 const LOBBY_IMAGES = [
   "/images/general/lobby_entry.jpg",
-  "/images/general/lobby.jpg",
   "/images/general/lobby2.jpg",
 ];
 
