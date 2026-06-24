@@ -93,6 +93,8 @@ const ROOMS = [
     description:
       "Freshly renovated in 2026 and inspired by the blues of the Ionian Sea. This studio features stunning port views, contemporary interiors, and everything you need for a comfortable and stylish stay. Includes two separate beds.",
     images: [
+      "/images/6/870545476.jpg",
+      "/images/6/870567315.jpg",
       "/images/6/784467690.jpg",
       "/images/6/843453787.jpg",
       "/images/6/843453868.jpg",
@@ -107,8 +109,19 @@ const ROOMS = [
     name: "Studio 3 – Port Panorama",
     description:
       "Freshly renovated in 2026, this studio offers breathtaking views of the port of Argostoli. Completely redesigned with modern furnishings, a fully equipped kitchen, and a private balcony where you can watch the boats come and go.",
-    images: [],
-    photoNotice: "Currently under renovation. Upcoming photos soon.",
+    images: [
+      "/images/3/882826293.jpg",
+      "/images/3/882827172.jpg",
+      "/images/3/882828479.jpg",  
+      "/images/3/882829140.jpg",
+      "/images/3/882829655.jpg",
+      "/images/3/882832086.jpg",
+      "/images/3/882827555.jpg", 
+      "/images/3/882832927.jpg",
+      "/images/3/883267143.jpg",
+      "/images/3/883267143.jpg",
+    ],
+    photoNotice: "Renovated April 2026",
     amenities: ["Renovated 2026", "Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
   },
   {
@@ -116,6 +129,19 @@ const ROOMS = [
     description:
       "Enjoy uninterrupted views of the harbour from this cozy and well-appointed studio. Fully equipped with a complete kitchen, air conditioning, and all the comforts you need for an unforgettable stay in Kefalonia.",
     images: [
+      "/images/4/866000831.jpg",
+      "/images/4/868516605.jpg",
+      "/images/4/868516694.jpg",
+      "/images/4/868517932.jpg",
+      "/images/4/869464530.jpg",
+      "/images/4/869464670.jpg",
+      "/images/4/870531592.jpg",
+      "/images/4/870534292.jpg",
+      "/images/4/870540613.jpg",
+      "/images/4/870892796.jpg",
+      "/images/4/876049056.jpg",
+      "/images/4/885436011.jpg",
+      "/images/4885437078.jpg",
       '/images/4/room4.png',
       '/images/4/room41.png',
       '/images/4/room42.png',
@@ -131,8 +157,10 @@ const ROOMS = [
       "Overlooking the bustling port of Argostoli, this studio is the perfect vantage point for watching island life unfold. Fully equipped kitchen, air conditioning, and a private balcony make this your ideal Kefalonian base. Features a double king-size bed.",
     images: [
       "/images/7/717028738.jpg",
-      "/images/7/717029006.jpg",
       "/images/7/741394917.jpg",
+      "/images/7/888282642.jpg",
+      "/images/7/888284906.jpg",
+      "/images/7/888287297.jpg",
     ],
     amenities: ["Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
   },
@@ -142,8 +170,8 @@ const ROOMS = [
       "Our most spacious studio, perfect for those who value extra room to relax. Features a generous living space with a fully equipped kitchen, modern air conditioning, and a private balcony. A true home away from home in the heart of Argostoli. Accommodates up to 4 guests.",
     images: [
       "/images/1/663423818.jpg",
-      "/images/1/663423850.jpg",
-      "/images/general/garden.jpg",
+      "/images/1/870569896.jpg",
+      "/images/1/885441588.jpg",
     ],
     amenities: ["Spacious", "Up to 4 Guests", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
   },
@@ -152,8 +180,9 @@ const ROOMS = [
     description:
       "A peaceful studio overlooking the lush garden, fully equipped with everything you need for a comfortable stay. Wake up to the sound of birdsong and enjoy your morning coffee surrounded by Mediterranean greenery.",
     images: [
-      "/images/2/723875003.jpg",
-      "/images/general/garden.jpg",
+      "/images/2/885270233.jpg",
+      "/images/2/885270233.jpg",
+      "/images/2/885330029.jpg",
     ],
     amenities: ["Garden View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
   },
