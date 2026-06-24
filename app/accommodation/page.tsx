@@ -99,8 +99,6 @@ const ROOMS = [
       "/images/6/843453787.jpg",
       "/images/6/843453868.jpg",
       "/images/6/843453920.jpg",
-      "/images/6/843455834.jpg",
-      "/images/6/843455911.jpg",
     ],
     renovationSticker: "Renovated April 2026",
     amenities: ["Renovated 2026", "Two Separate Beds", "Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
