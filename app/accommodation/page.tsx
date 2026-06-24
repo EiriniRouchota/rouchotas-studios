@@ -127,10 +127,10 @@ const ROOMS = [
     description:
       "Enjoy uninterrupted views of the harbour from this cozy and well-appointed studio. Fully equipped with a complete kitchen, air conditioning, and all the comforts you need for an unforgettable stay in Kefalonia.",
     images: [
+      "/images/4/868517932.jpg",
       "/images/4/866000831.jpg",
       "/images/4/868516605.jpg",
       "/images/4/868516694.jpg",
-      "/images/4/868517932.jpg",
       "/images/4/869464530.jpg",
       "/images/4/869464670.jpg",
       "/images/4/870531592.jpg",
@@ -139,7 +139,7 @@ const ROOMS = [
       "/images/4/870892796.jpg",
       "/images/4/876049056.jpg",
       "/images/4/885436011.jpg",
-      "/images/4885437078.jpg",
+      "/images/4/885437078.jpg",
       '/images/4/room4.png',
       '/images/4/room41.png',
       '/images/4/room42.png',
