@@ -406,17 +406,6 @@ export default function AccommodationPage() {
               </div>
               <div
                 className="relative h-36 sm:h-44 rounded-lg overflow-hidden shadow-md cursor-pointer group"
-                onClick={() => setLightbox({ images: LOBBY_IMAGES, index: 1 })}
-              >
-                <Image
-                  src="/images/general/lobby.jpg"
-                  alt="Lobby area at Rouchotas Studios"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div
-                className="relative h-36 sm:h-44 rounded-lg overflow-hidden shadow-md cursor-pointer group"
                 onClick={() => setLightbox({ images: LOBBY_IMAGES, index: 2 })}
               >
                 <Image
