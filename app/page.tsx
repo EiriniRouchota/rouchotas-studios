@@ -190,7 +190,7 @@ export default function HomePage() {
               <div className="relative h-48 sm:h-64 lg:h-80 mt-6 sm:mt-8">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/balcony-hero.jpg"
+                  src="/images/4/885437078.jpg"
                   alt="Breakfast on the balcony"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
