@@ -222,7 +222,7 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch mt-10 sm:mt-14">
             <div className="relative h-72 sm:h-96 lg:h-auto lg:min-h-[450px] overflow-hidden">
               <Image
-                src="/images/5/846208714.jpg"
+                src="/images/3/882832927.jpg"
                 alt="Renovated studio room"
                 fill
                 className="object-cover"
