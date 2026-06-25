@@ -124,81 +124,133 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-14 sm:py-20 lg:py-28 bg-sand">
-        <div className="w-full px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-accent uppercase tracking-[0.3em] text-sm mb-3">
-              Since the Late &apos;90s
-            </p>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary-dark mb-6">
-              About Rouchotas Studios
-            </h2>
-            <div className="section-divider" />
+{/* About Section */}
+<section id="about" className="bg-sand py-24">
+  <div className="lg:col-span-3 pl-4 lg:pl-12 xl:pl-16 space-y-6 text-body-light leading-relaxed text-base">
+
+    {/* Heading */}
+    <div className="text-center mb-20">
+      <p className="text-accent uppercase tracking-[0.35em] text-sm mb-3">
+        Since the Late &apos;90s
+      </p>
+
+      <h2 className="font-heading text-4xl lg:text-5xl text-primary-dark mb-5">
+        About Rouchotas Studios
+      </h2>
+
+      <div className="section-divider" />
+    </div>
+
+    {/* Content */}
+    <div className="grid lg:grid-cols-2 gap-20 items-center">
+
+      {/* LEFT */}
+      <div className="max-w-2xl">
+
+        <div className="space-y-7 text-lg leading-9 text-body-light">
+
+          <p>
+            Rouchotas Studios is a family-run business in the heart of
+            Argostoli, welcoming guests since the late 1990s.
+            Freshly renovated in 2026, our studios blend modern comfort
+            with authentic Kefalonian hospitality.
+          </p>
+
+          <p>
+            Every studio is fully equipped with a complete kitchen,
+            air conditioning, private balcony and everything needed
+            for a relaxing holiday overlooking the beautiful port
+            of Argostoli.
+          </p>
+
+          <p>
+            Located just steps from the central bus station, our
+            location makes exploring Kefalonia's beaches, villages
+            and hidden gems effortless.
+          </p>
+
+        </div>
+
+        {/* Rating */}
+        <div className="mt-12 inline-flex items-center gap-5 rounded-2xl bg-white px-7 py-5 shadow-xl">
+
+          <div className="flex flex-col items-center">
+            <div className="rounded-lg bg-[#003580] px-4 py-3">
+              <span className="text-2xl font-bold text-white">
+                9.0
+              </span>
+            </div>
+
+            <span className="mt-1 text-[11px] uppercase tracking-wider text-[#003580] font-semibold">
+              Score
+            </span>
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-10 lg:gap-16 items-center">
-            <div className="lg:col-span-3 space-y-4 sm:space-y-6 text-body-light leading-relaxed text-sm sm:text-base ml-6 sm:ml-12 lg:ml-20 mr-6 sm:mr-12 lg:mr-16">
-              <p>
-                Rouchotas Studios is a family-run business in the heart of
-                Argostoli, welcoming guests since the late 1990s. Freshly
-                renovated in 2026, our studios and apartments blend modern
-                comfort with the warmth of traditional Kefalonian hospitality.
-              </p>
-              <p>
-                Every unit is fully equipped -- just like home. From a complete
-                kitchen to air conditioning and everything in between, we make
-                sure you have all you need for a relaxing stay. Step outside
-                onto your balcony and enjoy a stunning view of the port of
-                Argostoli.
-              </p>
-              <p>
-                Located right outside the bus station with easy access to local
-                transportation, Rouchotas Studios is the perfect base to explore
-                the island&apos;s famous beaches, villages, and hidden gems.
-              </p>
-              <br></br>
-              {/* Booking.com rating card */}
-              <div className="mt-6 sm:mt-8 inline-flex items-center gap-5 bg-white rounded-xl shadow-lg px-6 py-4 border border-sand-dark">
-                <div className="flex flex-col items-center gap-1">
-                  <div className="bg-[#003580] rounded-lg px-3 py-2">
-                    <span className="text-white text-xl font-bold leading-none">9.0</span>
-                  </div>
-                  <span className="text-[#003580] text-[10px] font-semibold uppercase tracking-wider">Score</span>
-                </div>
-                <div className="h-12 w-px bg-sand-dark" />
-                <div className="flex flex-col gap-0.5">
-                  <span className="text-primary-dark font-semibold text-base">Excellent</span>
-                  <span className="text-body-light text-xs">Based on Guest Reviews</span>
-                </div>
-                <div className="h-12 w-px bg-sand-dark" />
-                <svg className="h-7 w-auto shrink-0" viewBox="0 0 300 48" fill="none">
-                  <rect width="300" height="48" rx="6" fill="#003580" />
-                  <text x="12" y="35" fill="white" fontSize="30" fontWeight="bold" fontFamily="Arial, sans-serif">Booking.com</text>
-                </svg>
-              </div>
-            </div>
-            <div className="lg:col-span-2 grid grid-cols-2 gap-3 sm:gap-4">
-              <div className="relative h-48 sm:h-64 lg:h-80">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/general/kefalonia-argostoli.gif"
-                  alt="Argostoli Kefalonia view"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-              <div className="relative h-48 sm:h-64 lg:h-80 mt-6 sm:mt-8">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/4/885437078.jpg"
-                  alt="Breakfast on the balcony"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-            </div>
+          <div className="h-14 w-px bg-gray-200" />
+
+          <div>
+            <h4 className="font-semibold text-primary-dark text-lg">
+              Excellent
+            </h4>
+
+            <p className="text-sm text-body-light">
+              Based on Booking.com guest reviews
+            </p>
           </div>
+
         </div>
-      </section>
+
+      </div>
+
+      {/* RIGHT */}
+      <div className="relative h-[620px] hidden lg:block">
+
+        {/* Main image */}
+        <div className="absolute left-0 top-0 h-[500px] w-[78%] overflow-hidden rounded-2xl shadow-2xl">
+
+          <img
+            src="/images/general/kefalonia-argostoli.gif"
+            alt="Argostoli waterfront"
+            className="h-full w-full object-cover"
+          />
+
+        </div>
+
+        {/* Floating image */}
+        <div className="absolute bottom-0 right-0 h-[260px] w-[58%] overflow-hidden rounded-2xl border-8 border-sand shadow-2xl">
+
+          <img
+            src="/images/4/885437078.jpg"
+            alt="Breakfast"
+            className="h-full w-full object-cover"
+          />
+
+        </div>
+
+      </div>
+
+      {/* Mobile images */}
+      <div className="grid grid-cols-2 gap-4 lg:hidden">
+
+        <img
+          src="/images/general/kefalonia-argostoli.gif"
+          className="rounded-xl object-cover h-64 w-full"
+          alt=""
+        />
+
+        <img
+          src="/images/4/885437078.jpg"
+          className="rounded-xl object-cover h-64 w-full"
+          alt=""
+        />
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
         <br></br>
       {/* Accommodation Section */}
       <section id="accommodation" className="py-14 sm:py-20 lg:py-28 bg-sand-dark">
