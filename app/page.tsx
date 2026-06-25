@@ -7,15 +7,16 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 const HERO_SLIDES = [
-    "/images/6/843455834.jpg",
-  "/images/5/846165892.jpg",
-  "/rouchotas-studios-by-viktor-1rst-floor-argostoli-kefalonia-img-6.jpg",
-  "/balcony-hero.jpg",
-
-  "/images/5/846165847.jpg",
-  "/images/5/846208920.jpg",
-  "/images/hero/262205978.jpg"
- 
+  "images/1/885441588.jpg",
+  "images/2/885270233.jpg",
+  "images/2/885285408.jpg",
+  "images/3/883267616.jpg",
+  "images/3/882828479.jpg",
+  "images/3/882832927.jpg",
+  "images/3/882827555.jpg",
+  "images/4/885436011.jpg",
+  "images/4/885437078.jpg",
+  "images/6/870567315.jpg"
 ];
 
 export default function HomePage() {
@@ -161,7 +162,7 @@ export default function HomePage() {
               <div className="mt-6 sm:mt-8 inline-flex items-center gap-5 bg-white rounded-xl shadow-lg px-6 py-4 border border-sand-dark">
                 <div className="flex flex-col items-center gap-1">
                   <div className="bg-[#003580] rounded-lg px-3 py-2">
-                    <span className="text-white text-xl font-bold leading-none">8.9</span>
+                    <span className="text-white text-xl font-bold leading-none">9.0</span>
                   </div>
                   <span className="text-[#003580] text-[10px] font-semibold uppercase tracking-wider">Score</span>
                 </div>

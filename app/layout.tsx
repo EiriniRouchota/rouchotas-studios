@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import "./globals.css";
+import './globals.css';
 import { siteName, siteUrl } from "./site-config";
 
 export const metadata: Metadata = {
