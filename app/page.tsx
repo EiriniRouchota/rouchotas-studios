@@ -64,9 +64,8 @@ export default function HomePage() {
             key={i}
             src={src}
             alt={`Rouchotas Studios - Photo ${i + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-              i === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
           />
         ))}
         <div className="hero-overlay absolute inset-0" />
@@ -115,143 +114,142 @@ export default function HomePage() {
             <button
               key={i}
               onClick={() => setCurrentSlide(i)}
-              className={`w-2.5 h-2.5 rounded-full transition-all ${
-                i === currentSlide ? "bg-white scale-110" : "bg-white/40 hover:bg-white/60"
-              }`}
+              className={`w-2.5 h-2.5 rounded-full transition-all ${i === currentSlide ? "bg-white scale-110" : "bg-white/40 hover:bg-white/60"
+                }`}
               aria-label={`Go to slide ${i + 1}`}
             />
           ))}
         </div>
       </section>
 
-{/* About Section */}
-<section id="about" className="bg-sand py-24">
-  <div className="lg:col-span-3 pl-4 lg:pl-12 xl:pl-16 space-y-6 text-body-light leading-relaxed text-base">
+      {/* About Section */}
+      <section id="about" className="bg-sand py-24">
+        <div className="lg:col-span-3 pl-4 lg:pl-12 xl:pl-16 space-y-6 text-body-light leading-relaxed text-base">
 
-    {/* Heading */}
-    <div className="text-center mb-20">
-      <p className="text-accent uppercase tracking-[0.35em] text-sm mb-3">
-        Since the Late &apos;90s
-      </p>
+          {/* Heading */}
+          <div className="text-center mb-20">
+            <p className="text-accent uppercase tracking-[0.35em] text-sm mb-3">
+              Since the Late &apos;90s
+            </p>
 
-      <h2 className="font-heading text-4xl lg:text-5xl text-primary-dark mb-5">
-        About Rouchotas Studios
-      </h2>
+            <h2 className="font-heading text-4xl lg:text-5xl text-primary-dark mb-5">
+              About Rouchotas Studios
+            </h2>
 
-      <div className="section-divider" />
-    </div>
+            <div className="section-divider" />
+          </div>
 
-    {/* Content */}
-    <div className="grid lg:grid-cols-2 gap-20 items-center">
+          {/* Content */}
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
 
-      {/* LEFT */}
-      <div className="max-w-2xl">
+            {/* LEFT */}
+            <div className="max-w-2xl">
 
-        <div className="space-y-7 text-lg leading-9 text-body-light">
+              <div className="space-y-7 text-lg leading-9 text-body-light">
 
-          <p>
-            Rouchotas Studios is a family-run business in the heart of
-            Argostoli, welcoming guests since the late 1990s.
-            Freshly renovated in 2026, our studios blend modern comfort
-            with authentic Kefalonian hospitality.
-          </p>
+                <p>
+                  Rouchotas Studios is a family-run business in the heart of
+                  Argostoli, welcoming guests since the late 1990s.
+                  Freshly renovated in 2026, our studios blend modern comfort
+                  with authentic Kefalonian hospitality.
+                </p>
 
-          <p>
-            Every studio is fully equipped with a complete kitchen,
-            air conditioning, private balcony and everything needed
-            for a relaxing holiday overlooking the beautiful port
-            of Argostoli.
-          </p>
+                <p>
+                  Every studio is fully equipped with a complete kitchen,
+                  air conditioning, private balcony and everything needed
+                  for a relaxing holiday overlooking the beautiful port
+                  of Argostoli.
+                </p>
 
-          <p>
-            Located just steps from the central bus station, our
-            location makes exploring Kefalonia's beaches, villages
-            and hidden gems effortless.
-          </p>
+                <p>
+                  Located just steps from the central bus station, our
+                  location makes exploring Kefalonia's beaches, villages
+                  and hidden gems effortless.
+                </p>
 
-        </div>
+              </div>
 
-        {/* Rating */}
-        <div className="mt-12 inline-flex items-center gap-5 rounded-2xl bg-white px-7 py-5 shadow-xl">
+              {/* Rating */}
+              <div className="mt-12 inline-flex items-center gap-5 rounded-2xl bg-white px-7 py-5 shadow-xl">
 
-          <div className="flex flex-col items-center">
-            <div className="rounded-lg bg-[#003580] px-4 py-3">
-              <span className="text-2xl font-bold text-white">
-                9.0
-              </span>
+                <div className="flex flex-col items-center">
+                  <div className="rounded-lg bg-[#003580] px-4 py-3">
+                    <span className="text-2xl font-bold text-white">
+                      9.0
+                    </span>
+                  </div>
+
+                  <span className="mt-1 text-[11px] uppercase tracking-wider text-[#003580] font-semibold">
+                    Score
+                  </span>
+                </div>
+
+                <div className="h-14 w-px bg-gray-200" />
+
+                <div>
+                  <h4 className="font-semibold text-primary-dark text-lg">
+                    Excellent
+                  </h4>
+
+                  <p className="text-sm text-body-light">
+                    Based on Booking.com guest reviews
+                  </p>
+                </div>
+
+              </div>
+
             </div>
 
-            <span className="mt-1 text-[11px] uppercase tracking-wider text-[#003580] font-semibold">
-              Score
-            </span>
+            {/* RIGHT */}
+            <div className="relative h-[620px] hidden lg:block">
+
+              {/* Main image */}
+              <div className="absolute left-0 top-0 h-[500px] w-[78%] overflow-hidden rounded-2xl shadow-2xl">
+
+                <img
+                  src="/images/general/kefalonia-argostoli.gif"
+                  alt="Argostoli waterfront"
+                  className="h-full w-full object-cover"
+                />
+
+              </div>
+
+              {/* Floating image */}
+              <div className="absolute bottom-0 right-0 h-[260px] w-[58%] overflow-hidden rounded-2xl border-8 border-sand shadow-2xl">
+
+                <img
+                  src="/images/4/885437078.jpg"
+                  alt="Breakfast"
+                  className="h-full w-full object-cover"
+                />
+
+              </div>
+
+            </div>
+
+            {/* Mobile images */}
+            <div className="grid grid-cols-2 gap-4 lg:hidden">
+
+              <img
+                src="/images/general/kefalonia-argostoli.gif"
+                className="rounded-xl object-cover h-64 w-full"
+                alt=""
+              />
+
+              <img
+                src="/images/4/885437078.jpg"
+                className="rounded-xl object-cover h-64 w-full"
+                alt=""
+              />
+
+            </div>
+
           </div>
 
-          <div className="h-14 w-px bg-gray-200" />
-
-          <div>
-            <h4 className="font-semibold text-primary-dark text-lg">
-              Excellent
-            </h4>
-
-            <p className="text-sm text-body-light">
-              Based on Booking.com guest reviews
-            </p>
-          </div>
-
         </div>
+      </section>
 
-      </div>
-
-      {/* RIGHT */}
-      <div className="relative h-[620px] hidden lg:block">
-
-        {/* Main image */}
-        <div className="absolute left-0 top-0 h-[500px] w-[78%] overflow-hidden rounded-2xl shadow-2xl">
-
-          <img
-            src="/images/general/kefalonia-argostoli.gif"
-            alt="Argostoli waterfront"
-            className="h-full w-full object-cover"
-          />
-
-        </div>
-
-        {/* Floating image */}
-        <div className="absolute bottom-0 right-0 h-[260px] w-[58%] overflow-hidden rounded-2xl border-8 border-sand shadow-2xl">
-
-          <img
-            src="/images/4/885437078.jpg"
-            alt="Breakfast"
-            className="h-full w-full object-cover"
-          />
-
-        </div>
-
-      </div>
-
-      {/* Mobile images */}
-      <div className="grid grid-cols-2 gap-4 lg:hidden">
-
-        <img
-          src="/images/general/kefalonia-argostoli.gif"
-          className="rounded-xl object-cover h-64 w-full"
-          alt=""
-        />
-
-        <img
-          src="/images/4/885437078.jpg"
-          className="rounded-xl object-cover h-64 w-full"
-          alt=""
-        />
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-        <br></br>
+      <br></br>
       {/* Accommodation Section */}
       <section id="accommodation" className="py-14 sm:py-20 lg:py-28 bg-sand-dark">
         <div className="w-full px-4 sm:px-6 lg:px-8">
@@ -279,7 +277,7 @@ export default function HomePage() {
                 fill
                 className="object-cover"
               />
-    
+
             </div>
             <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-8 lg:py-12">
               <p className="text-body-light leading-relaxed text-sm sm:text-base mb-6">
@@ -301,7 +299,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-    <br></br>
+      <br></br>
       {/* Location Section */}
       <section id="location" className="relative">
         <div className="grid lg:grid-cols-[2fr_3fr]">
@@ -391,7 +389,7 @@ export default function HomePage() {
                 Free Parking
               </div>
             </div>
-          <br />
+            <br />
             {/* Transport links */}
             <h3 className="text-white uppercase tracking-widest text-xs font-semibold mb-4">
               Transport
@@ -447,7 +445,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-     <br></br>
+      <br></br>
       {/* Experiences Section */}
       <section id="experiences" className="py-14 sm:py-20 lg:py-28 bg-sand">
         <div className="w-full mx-auto px-6 sm:px-10 lg:px-16">
