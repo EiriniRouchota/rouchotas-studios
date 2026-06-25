@@ -162,8 +162,16 @@ export default function HomePage() {
 
                 <p>
                   Located just steps from the central bus station, our
-                  location makes exploring Kefalonia's beaches, villages
+                  location makes exploring Kefalonia&apos;s beaches, villages
                   and hidden gems effortless.
+                </p>
+
+                <p>
+                  Guests choose Rouchotas Studios for our excellent location in
+                  the heart of Argostoli, genuine family hospitality, and
+                  outstanding value. Fully equipped amenities, comfortable
+                  studios, and a welcoming atmosphere help you enjoy a relaxing
+                  and memorable holiday in Kefalonia.
                 </p>
 
               </div>
@@ -191,7 +199,7 @@ export default function HomePage() {
                   </h4>
 
                   <p className="text-sm text-body-light">
-                    Based on Booking.com guest reviews
+                    Location, hospitality, comfort &amp; value — rated highly on Booking.com
                   </p>
                 </div>
 
