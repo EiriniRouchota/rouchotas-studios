@@ -269,7 +269,7 @@ export default function HomePage() {
           </div>
           <br></br>
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch mt-10 sm:mt-14">
-            <div className="relative h-72 sm:h-96 lg:h-auto lg:min-h-[450px] overflow-hidden">
+            <div className="relative h-72 sm:h-96 lg:h-auto lg:min-h-[450px] overflow-hidden rounded-2xl shadow-lg">
               <Image
                 src="/images/3/882832927.jpg"
                 alt="Renovated studio room"
@@ -444,7 +444,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <br></br>
       {/* Experiences Section */}
       <section id="experiences" className="py-14 sm:py-20 lg:py-28 bg-sand">
         <div className="w-full mx-auto px-6 sm:px-10 lg:px-16">

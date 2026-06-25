@@ -337,7 +337,7 @@ export default function AccommodationPage() {
       {/* Hero Banner */}
       <section className="relative h-[40vh] min-h-[300px]">
         <Image
-          src="/images/6/843455834.jpg"
+          src="/images/3/882827555.jpg"
           alt="Rouchotas Studios - Accommodation"
           fill
           className="object-cover"
