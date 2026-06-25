@@ -124,8 +124,7 @@ export default function HomePage() {
 
       {/* About Section */}
       <section id="about" className="bg-sand py-24">
-        <div className="lg:col-span-3 pl-4 lg:pl-12 xl:pl-16 space-y-6 text-body-light leading-relaxed text-base">
-
+        <div className="page-inset">
           {/* Heading */}
           <div className="text-center mb-20">
             <p className="text-accent uppercase tracking-[0.35em] text-sm mb-3">

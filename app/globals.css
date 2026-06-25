@@ -27,10 +27,12 @@
   --font-body: "Montserrat", "Helvetica Neue", Arial, sans-serif;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 }
 
 html {
@@ -51,6 +53,32 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading), Georgia, serif;
+}
+
+.page-inset {
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .page-inset {
+    padding-left: 2.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-inset {
+    padding-left: 10%;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .page-inset {
+    padding-left: 12%;
+  }
 }
 
 .hero-overlay {
