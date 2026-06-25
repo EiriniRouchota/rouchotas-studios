@@ -63,7 +63,7 @@ export default function Lightbox({ images, startIndex, onClose }: LightboxProps)
         <img
           src={images[current]}
           alt={`Photo ${current + 1} of ${images.length}`}
-          className="max-w-[90vw] max-h-[85vh] object-contain"
+          className="max-h-[85vh] max-w-[90vw] object-contain"
         />
 
         {/* Next */}

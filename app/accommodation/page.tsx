@@ -7,6 +7,99 @@ import Footer from "../components/Footer";
 import Lightbox from "../components/Lightbox";
 import BookingModal from "../components/BookingModal";
 
+const MAX_THUMBNAILS = 5;
+
+function RoomGallery({
+  name,
+  images,
+  renovationSticker,
+  showRenovationBadge,
+  onOpenLightbox,
+}: {
+  name: string;
+  images: string[];
+  renovationSticker?: string;
+  showRenovationBadge?: boolean;
+  onOpenLightbox: (images: string[], index: number) => void;
+}) {
+  if (images.length === 0) {
+    return (
+      <div className="h-72 sm:h-96 lg:h-[400px] rounded-lg shadow-lg bg-primary-dark/90 text-white flex items-center justify-center text-center px-6">
+        <div>
+          <p className="text-xs uppercase tracking-[0.24em] text-white/80 mb-3">Photo Update</p>
+          <p className="font-heading text-xl sm:text-2xl mb-2">Currently Under Renovation</p>
+          <p className="text-sm sm:text-base text-white/90">Upcoming photos soon.</p>
+        </div>
+      </div>
+    );
+  }
+
+  const thumbnails = images.slice(1);
+  const visibleThumbnails = thumbnails.slice(0, MAX_THUMBNAILS);
+  const extraCount = Math.max(0, thumbnails.length - MAX_THUMBNAILS);
+
+  return (
+    <div className="flex flex-col gap-2">
+      <div
+        className="relative h-72 sm:h-96 lg:h-[400px] overflow-hidden rounded-lg shadow-lg cursor-pointer group shrink-0"
+        onClick={() => onOpenLightbox(images, 0)}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={images[0]}
+          alt={name}
+          className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+        />
+        {showRenovationBadge && (
+          <div className="absolute top-4 left-4 z-10 bg-[#d4af37] text-[#2d2212] rounded-md px-3 py-2 border border-[#b58f22] shadow-[0_10px_24px_rgba(58,42,15,0.28)]">
+            <p className="text-[10px] uppercase tracking-[0.18em] font-semibold text-[#5b460f]">
+              Recently Updated
+            </p>
+            <p className="text-xs sm:text-sm font-extrabold uppercase tracking-[0.08em] leading-tight">
+              {renovationSticker || "Renovated 2026"}
+            </p>
+          </div>
+        )}
+        <div className="absolute bottom-4 right-4 bg-black/50 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-sm">
+          {images.length} photo{images.length !== 1 ? "s" : ""} - click to view
+        </div>
+      </div>
+
+      {thumbnails.length > 0 && (
+        <div className="flex gap-2 h-20 sm:h-24 shrink-0">
+          {visibleThumbnails.map((img, imgIndex) => {
+            const isMoreCell = imgIndex === visibleThumbnails.length - 1 && extraCount > 0;
+            const lightboxIndex = isMoreCell ? MAX_THUMBNAILS : imgIndex + 1;
+
+            return (
+              <div
+                key={`${img}-${imgIndex}`}
+                className="relative flex-1 min-w-0 h-full overflow-hidden rounded cursor-pointer group"
+                onClick={() => onOpenLightbox(images, lightboxIndex)}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={img}
+                  alt={`${name} - Photo ${imgIndex + 2}`}
+                  className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                />
+                {isMoreCell ? (
+                  <div className="absolute inset-0 bg-black/65 flex flex-col items-center justify-center text-white">
+                    <span className="text-base sm:text-lg font-bold leading-none">+{extraCount}</span>
+                    <span className="text-[10px] sm:text-xs uppercase tracking-wider mt-0.5">more</span>
+                  </div>
+                ) : (
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
 const AMENITY_ICONS: Record<string, React.ReactNode> = {
   "Air Conditioning": (
     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v1m0 16v1m-7.07-2.93l.7-.7m12.73 0l.7.7M3 12h1m16 0h1m-2.93-7.07l-.7.7M6.34 6.34l-.7-.7M12 8a4 4 0 100 8 4 4 0 000-8z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 16s0 3 4 3 4-3 4-3" /></svg>
@@ -67,41 +160,57 @@ const AMENITY_ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
-const ROOMS = [
+type Room = {
+  name: string;
+  description: string;
+  images: string[];
+  amenities: string[];
+  beds: string;
+  renovationSticker?: string;
+  photoNotice?: string;
+};
+
+const BED_ICON = (
+  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 11h18v8H3zM3 11V8a2 2 0 012-2h6a2 2 0 012 2v3M13 11V8a2 2 0 012-2h4a2 2 0 012 2v3M5 19v2m14-2v2" />
+  </svg>
+);
+
+const ROOMS: Room[] = [
   {
     name: "Studio 5 – Sunset Suite",
     description:
-      "Newly renovated in 2026 with a fresh, modern design. This studio captures the golden Kefalonian sunsets over the port of Argostoli. Complete with a full kitchen, premium bedding, and a spacious balcony for evening relaxation. Features a double king-size bed.",
+      "Newly renovated in 2026 with a fresh, modern design. This studio captures the golden Kefalonian sunsets over the port of Argostoli. Complete with a full kitchen, premium bedding, and a spacious balcony for evening relaxation.",
     images: [
+      "/images/5/846208714.jpg",
       "/images/5/846165649.jpg",
-      "/images/5/846165500.jpg",
       "/images/5/846165384.jpg",
       "/images/5/846165780.jpg",
       "/images/5/846165847.jpg",
       "/images/5/846165892.jpg",
       "/images/5/846165988.jpg",
-      "/images/5/846208714.jpg",
       "/images/5/846208815.jpg",
       "/images/5/846208920.jpg",
       "/images/5/846208960.jpg",
     ],
     renovationSticker: "Renovated April 2026",
-    amenities: ["Renovated 2026", "Double King-Size Bed", "Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
+    beds: "1 double bed",
+    amenities: ["Renovated 2026", "Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
   },
   {
     name: "Studio 6 – Ionian Blue",
     description:
-      "Freshly renovated in 2026 and inspired by the blues of the Ionian Sea. This studio features stunning port views, contemporary interiors, and everything you need for a comfortable and stylish stay. Includes two separate beds.",
+      "Freshly renovated in 2026 and inspired by the blues of the Ionian Sea. This studio features stunning port views, contemporary interiors, and everything you need for a comfortable and stylish stay.",
     images: [
       "/images/6/870545476.jpg",
       "/images/6/870567315.jpg",
       "/images/6/784467690.jpg",
       "/images/6/843453787.jpg",
       "/images/6/843453868.jpg",
-      "/images/6/843453920.jpg",
-    ],
+        ],
     renovationSticker: "Renovated April 2026",
-    amenities: ["Renovated 2026", "Two Separate Beds", "Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
+    beds: "2 single beds",
+    amenities: ["Renovated 2026", "Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
   },
   {
     name: "Studio 3 – Port Panorama",
@@ -120,6 +229,7 @@ const ROOMS = [
       "/images/3/883267143.jpg",
     ],
     photoNotice: "Renovated April 2026",
+    beds: "1 double bed & 1 single bed",
     amenities: ["Renovated 2026", "Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
   },
   {
@@ -147,19 +257,19 @@ const ROOMS = [
       '/images/4/room44.png'
     ],
     photoNotice: "Renovated April 2026",
-    amenities: ["Double King-Size Bed", "Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
+    beds: "3 single beds",
+    amenities: ["Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
   },
   {
     name: "Studio 7 – Captains Quarters",
     description:
-      "Overlooking the bustling port of Argostoli, this studio is the perfect vantage point for watching island life unfold. Fully equipped kitchen, air conditioning, and a private balcony make this your ideal Kefalonian base. Features a double king-size bed.",
+      "Overlooking the bustling port of Argostoli, this studio is the perfect vantage point for watching island life unfold. Fully equipped kitchen, air conditioning, and a private balcony make this your ideal Kefalonian base.",
     images: [
-      "/images/7/717028738.jpg",
-      "/images/7/741394917.jpg",
       "/images/7/888282642.jpg",
       "/images/7/888284906.jpg",
       "/images/7/888287297.jpg",
     ],
+    beds: "1 double bed",
     amenities: ["Port View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
   },
   {
@@ -171,6 +281,7 @@ const ROOMS = [
       "/images/1/870569896.jpg",
       "/images/1/885441588.jpg",
     ],
+    beds: "4 single beds",
     amenities: ["Spacious", "Up to 4 Guests", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
   },
   {
@@ -182,14 +293,25 @@ const ROOMS = [
       "/images/2/885270233.jpg",
       "/images/2/885330029.jpg",
     ],
+    beds: "3 single beds",
     amenities: ["Garden View", "Air Conditioning", "Full Kitchen", "Cookware & Utensils", "Refrigerator", "Coffee Maker", "Free Wi-Fi", "Flat-Screen TV", "Private Balcony", "Private Bathroom", "Hair Dryer", "Iron", "Towels & Linens"],
   },
 ];
 
-const LOBBY_IMAGES = [
-  "/images/general/lobby_entry.jpg",
-  "/images/general/lobby2.jpg",
+const LOBBY_PHOTOS = [
+  {
+    src: "/images/general/lobby_entry.jpg",
+    alt: "Lobby entrance and garden area",
+    label: "Entrance & Garden",
+  },
+  {
+    src: "/images/general/lobby2.jpg",
+    alt: "Lobby sitting area with refreshments",
+    label: "Morning Refreshments",
+  },
 ];
+
+const LOBBY_IMAGES = LOBBY_PHOTOS.map((photo) => photo.src);
 
 export default function AccommodationPage() {
   const [lightbox, setLightbox] = useState<{ images: string[]; index: number } | null>(null);
@@ -266,67 +388,18 @@ export default function AccommodationPage() {
                 key={room.name}
                 className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch"
               >
-                <div className={`flex flex-col gap-2 ${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                  {room.images.length > 0 ? (
-                    <>
-                      <div
-                        className="relative h-72 sm:h-96 lg:h-[400px] overflow-hidden rounded-lg shadow-lg cursor-pointer group"
-                        onClick={() => setLightbox({ images: room.images, index: 0 })}
-                      >
-                        <Image
-                          src={room.images[0]}
-                          alt={room.name}
-                          fill
-                          className="object-contain bg-sand-dark transition-transform duration-500 group-hover:scale-105"
-                        />
-                        {(room.renovationSticker || room.amenities.includes("Renovated 2026")) && (
-                          <div className="absolute top-4 left-4 z-10 bg-[#d4af37] text-[#2d2212] rounded-md px-3 py-2 border border-[#b58f22] shadow-[0_10px_24px_rgba(58,42,15,0.28)]">
-                            <p className="text-[10px] uppercase tracking-[0.18em] font-semibold text-[#5b460f]">
-                                Recently Updated
-                            </p>
-                            <p className="text-xs sm:text-sm font-extrabold uppercase tracking-[0.08em] leading-tight">
-                              {room.renovationSticker || "Renovated 2026"}
-                            </p>
-                          </div>
-                        )}
-                        <div className="absolute bottom-4 right-4 bg-black/50 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-sm">
-                          Click to view all photos
-                        </div>
-                      </div>
-                      <div className="grid grid-cols-3 gap-2">
-                        {room.images.slice(1).map((img, imgIndex) => (
-                          <div
-                            key={imgIndex}
-                            className="relative h-20 sm:h-24 overflow-hidden rounded cursor-pointer group"
-                            onClick={() => setLightbox({ images: room.images, index: imgIndex + 1 })}
-                          >
-                            <Image
-                              src={img}
-                              alt={`${room.name} - Photo ${imgIndex + 2}`}
-                              fill
-                              className="object-contain bg-sand-dark group-hover:scale-105 transition-transform duration-300"
-                            />
-                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
-                          </div>
-                        ))}
-                      </div>
-                    </>
-                  ) : (
-                    <div className="h-72 sm:h-96 lg:h-[400px] rounded-lg shadow-lg bg-primary-dark/90 text-white flex items-center justify-center text-center px-6">
-                      <div>
-                        <p className="text-xs uppercase tracking-[0.24em] text-white/80 mb-3">
-                          Photo Update
-                        </p>
-                        <p className="font-heading text-xl sm:text-2xl mb-2">
-                          Currently Under Renovation
-                        </p>
-                        <p className="text-sm sm:text-base text-white/90">
-                          Upcoming photos soon.
-                        </p>
-                      </div>
-                    </div>
-                  )}
-                  <br></br>
+                <div className={`flex flex-col ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+                  <RoomGallery
+                    name={room.name}
+                    images={room.images}
+                    renovationSticker={room.renovationSticker}
+                    showRenovationBadge={
+                      Boolean(room.renovationSticker || room.amenities.includes("Renovated 2026"))
+                    }
+                    onOpenLightbox={(images, imageIndex) =>
+                      setLightbox({ images, index: imageIndex })
+                    }
+                  />
                 </div>
                 <div className={`${index % 2 === 1 ? "lg:order-1" : ""} h-full flex flex-col justify-center`}>
                   <div className="space-y-6">
@@ -343,10 +416,23 @@ export default function AccommodationPage() {
                       {room.description}
                     </p>
 
-                    
-                    <br></br><h3 className="text-primary-dark font-semibold text-sm uppercase tracking-widest">
+                    <div className="inline-flex items-center gap-4 rounded-2xl bg-gradient-to-r from-accent/15 via-white to-primary-light/20 px-5 py-4 shadow-[0_8px_24px_rgba(74,124,145,0.12)] border border-accent/25">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-dark text-white shrink-0 shadow-md">
+                        {BED_ICON}
+                      </div>
+                      <div>
+                        <p className="text-[11px] uppercase tracking-[0.2em] text-accent font-semibold">
+                          Beds
+                        </p>
+                        <p className="font-heading text-lg sm:text-xl text-primary-dark">
+                          {room.beds}
+                        </p>
+                      </div>
+                    </div>
+
+                    <h3 className="text-primary-dark font-semibold text-sm uppercase tracking-widest">
                       Amenities
-                    </h3> <br></br>
+                    </h3>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                       {room.amenities.filter(a => a !== "Renovated 2026").map((amenity) => (
                         <div key={amenity} className="flex items-center gap-2 text-body-light text-sm">
@@ -376,7 +462,7 @@ export default function AccommodationPage() {
       {/* Lobby Area */}
       <section className="py-14 sm:py-20 bg-sand">
         <div className="w-full px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-14 items-center">
             <div>
               <p className="text-accent uppercase tracking-[0.22em] text-xs sm:text-sm mb-3">
                 Shared Lobby Area
@@ -392,29 +478,28 @@ export default function AccommodationPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 sm:gap-4">
-              <div
-                className="relative col-span-2 h-56 sm:h-72 rounded-lg overflow-hidden shadow-lg cursor-pointer group"
-                onClick={() => setLightbox({ images: LOBBY_IMAGES, index: 0 })}
-              >
-                <Image
-                  src="/images/general/lobby_entry.jpg"
-                  alt="Lobby entrance and garden area"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div
-                className="relative h-36 sm:h-44 rounded-lg overflow-hidden shadow-md cursor-pointer group"
-                onClick={() => setLightbox({ images: LOBBY_IMAGES, index: 2 })}
-              >
-                <Image
-                  src="/images/general/lobby2.jpg"
-                  alt="Lobby sitting area"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
+              {LOBBY_PHOTOS.map((photo, index) => (
+                <div
+                  key={photo.src}
+                  className="relative h-56 sm:h-72 lg:h-80 overflow-hidden rounded-xl shadow-lg cursor-pointer group"
+                  onClick={() => setLightbox({ images: LOBBY_IMAGES, index })}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                    <p className="text-xs uppercase tracking-[0.18em] text-white/80 mb-1">
+                      Lobby
+                    </p>
+                    <p className="font-heading text-lg sm:text-xl">{photo.label}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
