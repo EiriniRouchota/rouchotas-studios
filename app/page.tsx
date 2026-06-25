@@ -138,7 +138,7 @@ export default function HomePage() {
 
             <div className="section-divider" />
           </div>
-
+          <br></br>
           {/* Content */}
           <div className="grid lg:grid-cols-2 gap-20 items-center">
 
